@@ -1,6 +1,12 @@
-node_modules
+node_modules/
 .tmp
 .sass-cache
-bower_components
+bower_components/
 .idea/
-/dist
+dist/
+npm_debug.log
+.editorconfig
+.bowerrc
+.gitattribute/
+.jshintrc
+.travis.yml
