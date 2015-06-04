@@ -10,10 +10,12 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <!--<link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />-->
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/about.css">
     <!-- endbuild -->
   </head>
   <body ng-app="ganeshwani7githubioApp">
@@ -24,25 +26,37 @@
     <!-- Add your site or application content here -->
     <!--<div style="height: 95%">-->
     <div ng-controller="AppCtrl">
-      <div class="container" style="padding-left: 0px">
+      <div class="container" scroll-spy>
         <div class="nav navbar-default navbar-fixed-top">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" style="margin-top: 5px; margin-left: 200px" href="#/">
-                <b><font style="font-size: 20px">Portfolio</font></b>
-              </a>
+          <div class="row">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#/" ng-click="activateClass('about')">
+                  <b>Portfolio</b>
+                </a>
+              </div>
+
+              <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                  <li role="presentation" ng-class="{active: activeClass === 'about'}">
+                    <a ng-click="handleAnchor('about')">About</a>
+                  </li>
+                  <li role="presentation" ng-class="{active: activeClass === 'resume'}">
+                    <a ng-click="handleAnchor('resume')">Resume</a>
+                  </li>
+                  <li role="presentation" ng-class="{active: activeClass === 'contact'}">
+                    <a ng-click="handleAnchor('contact')">Contact</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-
-            <ul class="nav navbar-nav navbar-right" style="margin-right: 200px">
-              <li class="{{about}} navbar-btn"><a ng-href="#/" ng-click="handleButton('about')">About</a></li>
-              <li class="{{resume}} navbar-btn"><a ng-href="#/about" ng-click="handleButton('resume')">Resume</a></li>
-              <li class="{{contact}} navbar-btn"><a ng-href="#/contact" ng-click="handleButton('contact')">Contact</a></li>
-            </ul>
-
           </div>
         </div>
 
-        <div ng-view=""></div>
+        <div id="about" ng-include="'views/about.html'"></div>
+        <div id="resume" class="new-section" ng-include="'views/main.html'"></div>
+        <div id="contact" class="new-section" ng-include="'views/contact.html'"></div>
+        <!--<div ng-view=""></div>-->
       </div>
     <!--</div>-->
 
@@ -63,10 +77,7 @@
         </div>
       </div>
     </div>
-
-
-
-    <!--</div>-->
+  </div>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -98,14 +109,17 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/contact.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/contact.js"></script>
+    <script src="scripts/directives/scroll-spy.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

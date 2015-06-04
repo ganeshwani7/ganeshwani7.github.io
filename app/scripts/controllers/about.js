@@ -15,6 +15,5 @@ angular.module('ganeshwani7githubioApp')
       'Karma'
     ];
     //Helps to maintain the focus on scope tab
-    $scope.handleButton('about');
 
   });

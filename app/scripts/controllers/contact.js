@@ -15,5 +15,5 @@ angular.module('ganeshwani7githubioApp')
       'Karma'
     ];
 
-    $scope.handleButton('contact');
+//    $scope.handleButton('contact');
   });

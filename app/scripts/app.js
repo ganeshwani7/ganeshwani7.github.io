@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngMaterial'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -34,28 +35,25 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  }).controller('AppCtrl', ['$scope', function ($scope){
+  }).controller('AppCtrl', ['$anchorScroll','$scope', '$location', function ($anchorScroll, $scope, $location){
 
-    $scope.about = 'active';
-    $scope.resume = '';
-    $scope.contact = '';
+    $scope.activeClass = 'about';
 
-    $scope.handleButton = function ( attr){
-      //console.log('hi, hope everything is good');
-      if( attr === 'resume'){
-        $scope.resume = 'active';
-        $scope.about = '';
-        $scope.contact = '';
+    $scope.handleAnchor = function (index) {
+      $anchorScroll.yOffset = 50;
+      console.log($location.hash());
+      if ($location.hash() !== index) {
+        $location.hash(index);
+        $scope.activateClass(index);
       }
-      else if( attr === 'about'){
-        $scope.resume = '';
-        $scope.about = 'active';
-        $scope.contact = '';
-      }
-      else if( attr === 'contact'){
-        $scope.resume = '';
-        $scope.about = '';
-        $scope.contact = 'active';
+      $anchorScroll();
+    };
+
+    $scope.activateClass = function (classIn) {
+      console.log('inside activate class with value ' + classIn);
+      $scope.activeClass = classIn;
+      if (!$scope.$$phase) {
+        $scope.$apply();
       }
     };
   }]);

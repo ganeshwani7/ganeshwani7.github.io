@@ -1,9 +1,5 @@
 @import "/bower_components/font-awesome/css/font-awesome.css";
-
-html {
-  font-size: 100px;
-  height: 100%;
-}
+/*@import "/bower_components/angular-material/angular-material.css";*/
 
 /* Space out content a bit */
 body {
@@ -17,28 +13,20 @@ body {
 
 .navbar-default {
   opacity: 0.95;
-  background-color: #EEE9E9	;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-/*.header,*/
-/*.marketing,*/
-/*.footer {*/
-  /*padding-left: 0px;*/
-  /*padding-right: 0px;*/
-/*}*/
+.partial-shadow {
+  box-shadow: -0.4em 0.4em 1em rgba(0, 0, 0, 0.16);
+}
+
+.full-shadow {
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.16);
+}
 
 /* Custom page header */
 .header {
   border-bottom: 0px solid #e5e5e5;
 }
-/* Make the masthead heading the same height as the navigation */
-/*.header h3 {*/
-  /*margin-top: 0;*/
-  /*margin-bottom: 0;*/
-  /*line-height: 40px;*/
-  /*padding-bottom: 19px;*/
-/*}*/
 
  /*Custom page footer */
 .footer {
@@ -49,45 +37,20 @@ body {
   /*border-top: 0px solid #e5e5e5;*/
 }
 
-/*.footer {*/
-  /*position: fixed;*/
-  /*margin-top: -150px; *//**//* negative value of footer height */
-  /*height: 10%;*/
-  /*width: 100%;*/
-  /*clear:both;*/
-  /*bottom: 0;*/
-  /*color: #777;*/
-/*}*/
-
-
 /* Customize container */
 @media (min-width: 768px) {
   .container {
     max-width: 1100px;
   }
+  .new-section {
+    margin-top: 200px;
+    margin-bottom: 200px;
+  }
+
 }
 
 .container-narrow > hr {
-  margin: 40px 0;
-}
-
-
-/* Main marketing message and sign up button */
-.jumbotron {
- /* text-align: `;*/
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
+  margin: 30px 0;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -109,34 +72,26 @@ body {
   }
 }
 
-.intro {
-  height: auto;
-  width: 1280px;
-  padding-bottom: 30px;
-  /*background-color: #b0c4de;*/
-  /*background-color: #D0CFCF;*/
-}
-
-ul {
-  overflow: auto;
-}
-
 /*For ul and li tags*/
 .icons{
   list-style-type: none;
   float: left;
 }
 
-ul li a i {
+i {
   background: #205D7A;
   color: #fff;
   width: 40px;
   height: 40px;
   border-radius: 20px;
-  font-size: 25px;
   text-align: center;
   margin-right: 10px;
   padding-top: 15%;
+  transition: all 0.2s ease-in-out;
+}
+
+i:hover {
+  opacity: .7;
 }
 
 .fa-facebook {
@@ -152,18 +107,18 @@ ul li a i {
   background:#dd4b39
 }
 
-div.ul {
-  float: left;
-  position: relative;
-  left: -50%;
-  text-align: center;
-  align-content: center;
-  alignment: center;
+.navbar-nav > li:hover, a {
+  cursor: pointer;
 }
 
-ul li a i {
-  transition: all 0.2s ease-in-out;
+.underline {
+  margin: 0;
 }
-ul li a i:hover {
-  opacity: .7;
+
+.black-border {
+  border-color: #000000;
+}
+
+li {
+  text-align: justify;
 }

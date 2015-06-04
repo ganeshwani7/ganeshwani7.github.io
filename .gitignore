@@ -10,3 +10,4 @@ npm_debug.log
 .gitattribute/
 .jshintrc
 .travis.yml
+.DS_Store
