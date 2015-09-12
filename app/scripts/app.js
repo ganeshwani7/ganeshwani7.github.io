@@ -15,31 +15,32 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch',
-    'ngMaterial'
+    'ngTouch'
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/contact', {
-        templateUrl: 'views/contact.html',
-        controller: 'ContactCtrl'
-      })
+      //.when('/', {
+      //  templateUrl: 'views/about.html',
+      //  controller: 'AboutCtrl'
+      //})
+      //.when('/about', {
+      //  templateUrl: 'views/main.html',
+      //  controller: 'MainCtrl'
+      //})
+      //.when('/contact', {
+      //  templateUrl: 'views/contact.html',
+      //  controller: 'ContactCtrl'
+      //})
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '#/'
       });
   }).controller('AppCtrl', ['$anchorScroll','$scope', '$location', function ($anchorScroll, $scope, $location){
 
     $scope.activeClass = 'about';
+    $location.hash('about/');
 
-    $scope.handleAnchor = function (index) {
+    $scope.handleAnchor = function (index, $event) {
+      $location.url($location.path());
       $anchorScroll.yOffset = 50;
       console.log($location.hash());
       if ($location.hash() !== index) {

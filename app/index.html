@@ -2,7 +2,7 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Ganesh Wani-Portfolio</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -10,7 +10,6 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -31,7 +30,7 @@
           <div class="row">
             <div class="container-fluid">
               <div class="navbar-header">
-                <a class="navbar-brand" href="#/" ng-click="activateClass('about')">
+                <a class="navbar-brand" href="#/about/" ng-click="activateClass('about')">
                   <b>Portfolio</b>
                 </a>
               </div>
@@ -39,13 +38,13 @@
               <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                   <li role="presentation" ng-class="{active: activeClass === 'about'}">
-                    <a ng-click="handleAnchor('about')">About</a>
+                    <a ng-click="handleAnchor('about', $event)">About</a>
                   </li>
                   <li role="presentation" ng-class="{active: activeClass === 'resume'}">
-                    <a ng-click="handleAnchor('resume')">Resume</a>
+                    <a ng-click="handleAnchor('resume', $event)">Resume</a>
                   </li>
                   <li role="presentation" ng-class="{active: activeClass === 'contact'}">
-                    <a ng-click="handleAnchor('contact')">Contact</a>
+                    <a ng-click="handleAnchor('contact', $event)">Contact</a>
                   </li>
                 </ul>
               </div>
@@ -72,7 +71,7 @@
           </ul>
           </div>
         </div>
-      <p class="text-center">Made with super-awesome <a href="https://angularjs.org/">Angular</a></p>
+      <p class="text-center">Made with super-awesome <a href="https://angularjs.org/">AngularJS</a></p>
     </div>
   </div>
 
@@ -106,8 +105,6 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/angular-aria/angular-aria.js"></script>
-    <script src="bower_components/angular-material/angular-material.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
